@@ -1,0 +1,65 @@
+@import '../../../global';
+
+.HomePage{
+    @include flex-center(row);
+    justify-content: space-evenly;
+    height: calc(100vh);
+    position: relative;
+
+    .hero-section{
+        width: 455px;
+        h1 {
+            font-size: 48px;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: normal;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 27px;
+            margin-bottom: 20px;
+
+            b {
+                color: $primary;
+                cursor: pointer;
+            }
+        }
+
+        div {
+            display: flex;
+
+            &:first-child.Button{
+                margin: auto;
+                width: 150px;
+            }
+
+            .Button{
+                height: 42px;
+            }
+        }
+        .wallet-address{
+            display: inline-block;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+
+    .Board {
+        --size: 75px;
+        .row-ranks span, .col-ranks span{
+            font-size: 14px;
+        }
+    }
+
+    .HorizontalLine {
+        position: absolute;
+        bottom: 40px;
+    }
+}

@@ -1,0 +1,93 @@
+// VARIABLES:
+
+$background: #312e2b;
+$backgroundDark: #272522;
+$highlight: #44413f;
+$primary: #7fa650;
+$primaryDark: #537133;
+$secondary: #e9ebd5;
+$text: #ebebeb;
+
+$danger: #ff8e7a;
+$selected: #aebe1b;
+$available-positions: #0000002d;
+
+// VARIABLES TO BE USED DYNAMICALLY
+
+:root {
+    --background: #312e2b;
+    --backgroundDark: #272522;
+    --highlight: #44413f;
+    --primary: #7fa650;
+    --primaryDark: #537133;
+    --secondary: #e9ebd5;
+    --text: #ebebeb;
+    --danger: #ff8e7a;
+
+    --selected: #aebe1b;
+    --available-positions: #0000002d;
+    --available-takes: #6400002d;
+}
+
+// MIXINS:
+
+@mixin flex-center ($direction) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $direction;
+}
+
+@mixin assideItem {
+    width: 85%;
+    background-color: $background;
+    height: 370px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    h3 {
+        font-size: 14px;
+        margin: 25px;
+    }
+
+    .Input {
+        input {
+            border: 1px solid $highlight;
+            border-radius: 30px;
+            padding: 0 15px;
+            &:focus {
+                border: 1px solid $primary;
+            }
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    }
+
+    section {
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 0 25px 25px;
+
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: $highlight;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $primaryDark;
+            border-radius: 20px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: $primary;
+        }
+    }
+}
